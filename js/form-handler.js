@@ -44,7 +44,7 @@ window.searchGuest = async function () {
 
     if (result.found) {
       hideWeddingNotification();
-      
+
       // ✅ NUEVO: Verificar si ya confirmó antes de mostrar el formulario
       await checkPreviousConfirmation(result.guest);
     } else {
@@ -66,27 +66,27 @@ async function checkPreviousConfirmation(guestData) {
   try {
     console.log("🔍 Verificando si el invitado ya confirmó...");
     console.log("📋 Guest Data:", guestData);
-    
+
     showWeddingNotification("Verificando estado...", "info", true);
-    
+
     const checkUrl = `${WEDDING_BACKEND_URL}/api/check-confirmation?guestId=${encodeURIComponent(guestData.id)}`;
     console.log("📡 URL de verificación:", checkUrl);
-    
+
     const response = await fetch(checkUrl);
-    
+
     if (!response.ok) {
       console.warn(`⚠️ Response status: ${response.status}`);
     }
-    
+
     const result = await response.json();
-    
+
     console.log("📄 Resultado de verificación:", result);
     console.log("  - hasConfirmed:", result.hasConfirmed);
     console.log("  - confirmationNumber:", result.confirmationNumber);
     console.log("  - message:", result.message);
-    
+
     hideWeddingNotification();
-    
+
     if (result.hasConfirmed === true) {
       console.log("✅ El invitado YA confirmó previamente");
       showAlreadyConfirmedMessage(guestData, result);
@@ -98,9 +98,9 @@ async function checkPreviousConfirmation(guestData) {
     console.error("❌ Error verificando confirmación:", error);
     console.error("  - Message:", error.message);
     console.error("  - Stack:", error.stack);
-    
+
     hideWeddingNotification();
-    
+
     // En caso de error, permitir continuar con el formulario
     console.warn("⚠️ Error en verificación - permitiendo continuar");
     handleWeddingGuestFound(guestData);
@@ -111,19 +111,19 @@ async function checkPreviousConfirmation(guestData) {
 function showAlreadyConfirmedMessage(guestData, confirmationInfo) {
   const searchResult = document.getElementById("searchResult");
   const confirmationForm = document.getElementById("confirmationForm");
-  
+
   confirmationForm.style.display = "none";
-  
-  const confirmedDate = confirmationInfo.confirmedAt 
+
+  const confirmedDate = confirmationInfo.confirmedAt
     ? new Date(confirmationInfo.confirmedAt).toLocaleDateString('es-MX', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-      })
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    })
     : 'Fecha no disponible';
-  
+
   searchResult.innerHTML = `
     <div class="already-confirmed-message">
       <div class="celebration-animation">
@@ -196,10 +196,10 @@ function showAlreadyConfirmedMessage(guestData, confirmationInfo) {
       </div>
     </div>
   `;
-  
+
   searchResult.className = "search-result found already-confirmed";
   searchResult.style.display = "block";
-  
+
   // Animación de los íconos de celebración
   setTimeout(() => {
     const icons = document.querySelectorAll('.celebration-icon');
@@ -209,7 +209,7 @@ function showAlreadyConfirmedMessage(guestData, confirmationInfo) {
       }, index * 100);
     });
   }, 100);
-  
+
   showWeddingNotification("✅ Este invitado ya confirmó su asistencia", "info");
 }
 
@@ -673,44 +673,44 @@ function showWeddingSuccessMessage(result) {
   const confirmationForm = document.getElementById('confirmationForm');
   const searchResult = document.getElementById('searchResult');
 
-  // Verifica que los elementos existen antes de manipularlos
-  if (!confirmationForm || !searchResult) {
-    console.error("Error: Elementos del DOM no encontrados (confirmationForm o searchResult)");
-    return;
-  }
+    // Verifica que los elementos existen antes de manipularlos
+    if (!confirmationForm || !searchResult) {
+      console.error("Error: Elementos del DOM no encontrados (confirmationForm o searchResult)");
+      return;
+    }
 
-  // Extrae la información necesaria de la respuesta del servidor
-  const confirmationNumber = result.confirmationNumber || 'No disponible';
-  const whatsappUrl = result.whatsappUrl;
+      // Extrae la información necesaria de la respuesta del servidor
+      const confirmationNumber = result.confirmationNumber || 'No disponible';
+      const whatsappUrl = result.whatsappUrl;
 
-  // Oculta el formulario principal
-  confirmationForm.style.display = 'none';
+      // Oculta el formulario principal
+      confirmationForm.style.display = 'none';
 
-  // Genera el HTML de éxito de forma dinámica con el número de confirmación
-  const whatsappButton = whatsappUrl
-    ? `<a href="${whatsappUrl}" class="btn main-btn" target="_blank">Enviar a WhatsApp</a>`
-    : '';
+      // Genera el HTML de éxito de forma dinámica con el número de confirmación
+      const whatsappButton = whatsappUrl
+        ? `<a href="${whatsappUrl}" class="btn main-btn" target="_blank">Enviar a WhatsApp</a>`
+        : '';
 
-  const qrImage = result.qrUrl
-    ? `<div class="qr-section">
-      <p>📲 Presenta este QR el día de la boda:</p>
-      <img src="${result.qrUrl}" alt="QR de confirmación" class="qr-image"/>
-    </div>`
-    : '';
+      const qrImage = result.qrUrl
+        ? `<div class="qr-section">
+          <p>📲 Presenta este QR el día de la boda:</p>
+          <img src="${result.qrUrl}" alt="QR de confirmación" class="qr-image"/>
+        </div>`
+        : '';
 
-  searchResult.innerHTML = `
- <div class="success-message">
-   <div class="success-icon">🎉</div>
-   <h4>¡Confirmación enviada exitosamente!</h4>
-   <p><strong>Número:</strong> ${confirmationNumber}</p>
-   ${qrImage}
-   <p>¡Nos vemos en la boda!</p>
-   ${whatsappButton}
-   <button onclick="location.reload()" class="btn btn-secondary" style="margin-top: 15px;">
-     Nueva Búsqueda
-   </button>
- </div>
-`;
+      searchResult.innerHTML = `
+    <div class="success-message">
+      <div class="success-icon">🎉</div>
+      <h4>¡Confirmación enviada exitosamente!</h4>
+      <p><strong>Número:</strong> ${confirmationNumber}</p>
+      ${qrImage}
+      <p>¡Nos vemos en la boda!</p>
+      ${whatsappButton}
+      <button onclick="location.reload()" class="btn btn-secondary" style="margin-top: 15px;">
+        Nueva Búsqueda
+      </button>
+    </div>
+    `;
 
   if (result.qrUrl) {
     mostrarQrModal(confirmationNumber, result.qrUrl, whatsappUrl);
@@ -723,6 +723,12 @@ function showWeddingSuccessMessage(result) {
   searchResult.style.display = "block";
 
   showWeddingNotification("¡Confirmación enviada! 🎉", "success");
+
+
+  if (window.weddingEnhancements) {
+    window.weddingEnhancements.showConfettiOnSuccess();
+  }
+
 }
 
 async function testWeddingBackend() {

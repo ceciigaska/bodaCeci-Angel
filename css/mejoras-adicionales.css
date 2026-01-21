@@ -1,0 +1,508 @@
+/* ============================================
+   ARCHIVO: mejoras-adicionales.css
+   AGREGAR DESPUÉS de styles.css en tu HTML
+   ============================================ */
+
+/* 1️⃣ ANIMACIONES AL SCROLL - Suaves y elegantes */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Aplicar delays escalonados a las tarjetas */
+.invitation-card:nth-child(1) { transition-delay: 0.1s; }
+.invitation-card:nth-child(2) { transition-delay: 0.2s; }
+.invitation-card:nth-child(3) { transition-delay: 0.3s; }
+.invitation-card:nth-child(4) { transition-delay: 0.4s; }
+.invitation-card:nth-child(5) { transition-delay: 0.5s; }
+
+/* 2️⃣ MEJORAS EN BOTONES - Efecto ripple */
+.btn,
+.main-btn,
+.secondary-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn::before,
+.main-btn::before,
+.secondary-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before,
+.main-btn:hover::before,
+.secondary-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn:hover,
+.main-btn:hover,
+.secondary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active,
+.main-btn:active,
+.secondary-btn:active {
+    transform: translateY(-1px);
+}
+
+/* 3️⃣ TARJETAS CON HOVER MEJORADO */
+.invitation-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.invitation-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.info-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.info-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #3c72b3, #7bb5a8);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.info-card:hover::after {
+    transform: scaleX(1);
+}
+
+/* 4️⃣ TÍTULOS MÁS IMPACTANTES con animación */
+.section-title {
+    position: relative;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+    animation: titleFadeIn 1s ease-out;
+}
+
+@keyframes titleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #d4764f, #c19a6b);
+    border-radius: 2px;
+    animation: lineGrow 1s ease-out 0.5s forwards;
+}
+
+@keyframes lineGrow {
+    to {
+        width: 100px;
+    }
+}
+
+.section-title::before {
+    content: '✦';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #d4764f;
+    font-size: 24px;
+    opacity: 0;
+    animation: starAppear 0.8s ease-out 1s forwards;
+}
+
+@keyframes starAppear {
+    to {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.2);
+    }
+}
+
+/* 5️⃣ COUNTDOWN MÁS DINÁMICO */
+.time-number {
+    position: relative;
+    display: inline-block;
+    animation: pulse-number 2s ease-in-out infinite;
+}
+
+@keyframes pulse-number {
+    0%, 100% { 
+        transform: scale(1);
+        color: inherit;
+    }
+    50% { 
+        transform: scale(1.08);
+        text-shadow: 0 0 10px rgba(60, 114, 179, 0.5);
+    }
+}
+
+.time-unit {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(60, 114, 179, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.time-unit:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(60, 114, 179, 0.3);
+}
+
+/* 6️⃣ FORMULARIO MÁS INTERACTIVO */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #7bb5a8;
+    box-shadow: 0 0 0 4px rgba(123, 181, 168, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Efecto label flotante */
+.form-group label {
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus + label,
+.form-group select:focus + label,
+.form-group textarea:focus + label {
+    color: #3c72b3;
+    transform: translateY(-2px);
+}
+
+/* 7️⃣ EFECTOS EN ÍCONOS */
+.info-icon {
+    transition: transform 0.4s ease;
+}
+
+.info-card:hover .info-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* 8️⃣ MAPA CON EFECTO HOVER */
+.map-container {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.map-container::after {
+    content: '📍 Ver en mapa completo';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(60, 114, 179, 0.95);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    font-family: "Coming Soon", cursive;
+}
+
+.map-container:hover::after {
+    opacity: 1;
+}
+
+.map-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* 9️⃣ LOVE STORY CON EFECTOS */
+.love-story {
+    transition: all 0.3s ease;
+}
+
+.love-story:hover {
+    border-left-width: 8px;
+    padding-left: 38px;
+}
+
+.love-story p {
+    opacity: 0;
+    animation: textFadeIn 0.8s ease-out forwards;
+}
+
+.love-story p:nth-child(2) { animation-delay: 0.2s; }
+.love-story p:nth-child(3) { animation-delay: 0.4s; }
+.love-story p:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes textFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 🔟 EFECTO PARALLAX LIGERO en el fondo */
+.main-content {
+    background-attachment: fixed;
+}
+
+/* 1️⃣1️⃣ NOTIFICACIÓN DE COPIADO MEJORADA */
+.copy-notification {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #7bb5a8, #4dd0c7);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    animation: slideInRight 0.4s ease-out;
+    z-index: 10000;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+}
+
+.copy-notification.hide {
+    animation: slideOutRight 0.4s ease-out forwards;
+}
+
+/* 1️⃣2️⃣ QR CODE CON EFECTO */
+#qrcode-container,
+#qrcode-photos {
+    transition: all 0.3s ease;
+}
+
+#qrcode-container:hover,
+#qrcode-photos:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 15px 40px rgba(60, 114, 179, 0.3);
+}
+
+/* 1️⃣3️⃣ DRESS CODE COLOR SWATCHES CON ANIMACIÓN */
+.color-swatch {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.color-swatch:hover {
+    transform: scale(1.3) rotate(360deg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 1️⃣4️⃣ CEREMONIA TIMES CON DESTACADO */
+.ceremony-times {
+    position: relative;
+    overflow: hidden;
+}
+
+.ceremony-times::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent
+    );
+    transition: left 0.8s ease;
+}
+
+.ceremony-times:hover::before {
+    left: 100%;
+}
+
+/* 1️⃣5️⃣ ACCORDION MEJORADO */
+.accordion-header {
+    transition: all 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: rgba(123, 181, 168, 0.2);
+    transform: translateX(5px);
+}
+
+.accordion-header::after {
+    content: '▼';
+    float: right;
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active::after {
+    transform: rotate(180deg);
+}
+
+/* 1️⃣6️⃣ FOOTER CON EFECTO */
+.footer {
+    animation: footerFadeIn 1s ease-out;
+}
+
+@keyframes footerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 1️⃣7️⃣ LOADING SPINNER para botones */
+.btn.loading::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    border: 2px solid white;
+    border-top-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 1️⃣8️⃣ SMOOTH SCROLL */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 1️⃣9️⃣ DESTACAR INPUT ACTIVO */
+.form-group {
+    position: relative;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    animation: inputGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes inputGlow {
+    0%, 100% {
+        box-shadow: 0 0 0 4px rgba(123, 181, 168, 0.15);
+    }
+    50% {
+        box-shadow: 0 0 0 6px rgba(123, 181, 168, 0.25);
+    }
+}
+
+/* 2️⃣0️⃣ MEJORA VISUAL DEL SPLASH */
+.splash-screen {
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 0.5s ease;
+}
+
+.splash-screen.fade-out {
+    backdrop-filter: blur(10px);
+}
+
+/* ============================================
+   RESPONSIVE IMPROVEMENTS
+   ============================================ */
+@media (max-width: 768px) {
+    .invitation-card:hover {
+        transform: translateY(-4px);
+    }
+    
+    .time-unit:hover {
+        transform: translateY(-3px) scale(1.02);
+    }
+    
+    .copy-notification {
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        padding: 12px 20px;
+    }
+    
+    .map-container::after {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+
+/* ============================================
+   ACCESIBILIDAD - Modo reducción movimiento
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

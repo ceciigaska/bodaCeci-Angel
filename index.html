@@ -6,23 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cecilia & Ángel - Nuestra Boda</title>
 
-<!-- Vista previa para WhatsApp / Redes -->
-<meta property="og:image" content="https://raw.githubusercontent.com/ceciigaska23/bodaCeciyAngel/main/assets/images/boda2.png">
-<meta property="og:title" content="Cecilia & Ángel 💍 - Nuestra Boda">
-<meta property="og:description" content="Acompáñanos en este día tan especial ✨ Descubre todos los detalles aquí.">
-<meta property="og:url" content="https://ceciigaska23.github.io/bodaCeciyAngel/">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="es_MX">
+    <!-- Vista previa para WhatsApp / Redes -->
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/ceciigaska23/bodaCeciyAngel/main/assets/images/boda2.png">
+    <meta property="og:title" content="Cecilia & Ángel 💍 - Nuestra Boda">
+    <meta property="og:description" content="Acompáñanos en este día tan especial ✨ Descubre todos los detalles aquí.">
+    <meta property="og:url" content="https://ceciigaska23.github.io/bodaCeciyAngel/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_MX">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:wght@300;400;600;700&family=Poppins:wght@300;400;500;600&family=Quicksand:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Edu+QLD+Hand:wght@400..700&family=Pacifico&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Edu+QLD+Hand:wght@400..700&family=Pacifico&family=WindSong:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/splash.css">
     <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="css/mejoras-adicionales.css">
 </head>
 
 <body data-theme="light">
@@ -124,7 +130,8 @@
                                 Álvaro Obregón, 01620<br>
                                 Ciudad de México, CDMX
                             </p>
-                            <button type="button" class="btn secondary-btn" onclick="copyAddress()">
+                            <!-- <button type="button" class="btn secondary-btn" onclick="copyAddress()"> -->
+                                <button type="button" class="btn secondary-btn" onclick="copyAddressImproved()">
                                 Copiar Dirección
                             </button>
                         </div>
@@ -164,34 +171,38 @@
                                 <p>Llega 15-20 min antes de la ceremonia<br> <small>Considera tráfico de fin de
                                         semana</small></p>
                             </div>
-                            
+
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Dress Code Section -->
+                <!-- Dress Code Section -->
                 <div class="invitation-card">
                     <h2 class="section-title">✨ Dress Code</h2>
                     <div class="dress-code">
                         <h3>Elegancia Garden Party</h3>
                         <p>
-                            Nuestro evento será en <strong>Salón Jardín</strong> - un espacio semi-abierto con áreas verdes. 
+                            Nuestro evento será en <strong>Salón Jardín</strong> - un espacio semi-abierto con áreas
+                            verdes.
                             Viste elegante pero cómodo para disfrutar tanto en interiores como al aire libre.
                         </p>
-                        
+
                         <div class="venue-highlight">
                             <p>
-                                🌿 <strong>Ambiente:</strong> Salón con jardín, piso firme y áreas de pasto • 🌤️ <strong>Clima:</strong> Semi-abierto, posible brisa
+                                🌿 <strong>Ambiente:</strong> Salón con jardín, piso firme y áreas de pasto • 🌤️
+                                <strong>Clima:</strong> Semi-abierto, posible brisa
                             </p>
                         </div>
-                        
+
                         <!--para ellas-->
                         <div class="dress-code-grid">
                             <div class="dress-option">
                                 <h4>👗 Para Ellas</h4>
                                 <p><strong>Vestidos:</strong> Midi o largo, evita telas muy delicadas</p>
-                                <p><strong>Zapatos:</strong> Tacón medio/bajo, flats elegantes o <strong>tennis blancos/neutros</strong> (¡perfectos para el jardín!)</p>
-                                <p><strong>Colores sugeridos:</strong> tonos tierra, verdes suaves, azul marino, florales</p>
+                                <p><strong>Zapatos:</strong> Tacón medio/bajo, flats elegantes o <strong>tennis
+                                        blancos/neutros</strong> (¡perfectos para el jardín!)</p>
+                                <p><strong>Colores sugeridos:</strong> tonos tierra, verdes suaves, azul marino,
+                                    florales</p>
                                 <p><strong>Evitar:</strong> blanco, ivory, beige muy claro y tacones de aguja</p>
                                 <div class="dress-colors">
                                     <div class="color-swatch" style="background: #7bb5a8;" title="Verde sage"></div>
@@ -201,17 +212,20 @@
                                     <div class="color-swatch" style="background: #c19a6b;" title="Dorado suave"></div>
                                 </div>
                                 <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 15px;">
-                                    💡 <strong>Tip:</strong> Los tennis son bienvenidos - ¡comodidad y estilo!. Lleva una pashmina ligera por si refresca
+                                    💡 <strong>Tip:</strong> Los tennis son bienvenidos - ¡comodidad y estilo!. Lleva
+                                    una pashmina ligera por si refresca
                                 </p>
                             </div>
-                            
+
                             <!--para ellos-->
                             <div class="dress-option">
                                 <h4>👔 Para Ellos</h4>
                                 <p><strong>Trajes:</strong> de dos piezas o saco sport</p>
-                                <p><strong>Zapatos:</strong> de vestir cómodos o <strong>tennis elegantes/minimalistas</strong> (evita suelas muy lisas)</p>
+                                <p><strong>Zapatos:</strong> de vestir cómodos o <strong>tennis
+                                        elegantes/minimalistas</strong> (evita suelas muy lisas)</p>
                                 <p><strong>Colores sugeridos:</strong> azul marino, gris, negro, beige, lino</p>
-                                <p><strong>Corbata:</strong> opcional (recomendamos sin corbata para mayor comodidad)</p>
+                                <p><strong>Corbata:</strong> opcional (recomendamos sin corbata para mayor comodidad)
+                                </p>
                                 <div class="dress-colors">
                                     <div class="color-swatch" style="background: #2c4875;" title="Azul marino"></div>
                                     <!--div class="color-swatch" style="background: #5a8a53;" title="Verde oliva"></div-->
@@ -220,128 +234,135 @@
                                     <div class="color-swatch" style="background: #000000;" title="Verde oscuro"></div>
                                 </div>
                                 <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 15px;">
-                                    💡 <strong>Tip:</strong> Tennis blancos o de cuero lucen geniales con traje. Telas frescas como lino o algodón son ideales
+                                    💡 <strong>Tip:</strong> Tennis blancos o de cuero lucen geniales con traje. Telas
+                                    frescas como lino o algodón son ideales
                                 </p>
                             </div>
                         </div>
-                        
+
                         <!--Consejos para Salón Jardín-->
                         <div class="garden-tips">
                             <h4>🌱 Consejos para Salón Jardín</h4>
                             <div class="tips-grid">
                                 <div>
-                                    <p><strong>👟 Zapatos:</strong> Tennis elegantes son bienvenidos - ¡comodidad y estilo unidos!</p>
+                                    <p><strong>👟 Zapatos:</strong> Tennis elegantes son bienvenidos - ¡comodidad y
+                                        estilo unidos!</p>
                                 </div>
                                 <div>
-                                    <p><strong>🧥 Abrigo:</strong> El salón puede tener aire acondicionado, considera una chaqueta ligera</p>
+                                    <p><strong>🧥 Abrigo:</strong> El salón puede tener aire acondicionado, considera
+                                        una chaqueta ligera</p>
                                 </div>
                                 <div>
-                                    <p><strong>🌿 Telas:</strong> Evita telas muy delicadas que se puedan enganchar con plantas</p>
+                                    <p><strong>🌿 Telas:</strong> Evita telas muy delicadas que se puedan enganchar con
+                                        plantas</p>
                                 </div>
                                 <div>
                                     <p><strong>☀️ Protección:</strong> Habrá áreas techadas y al aire libre</p>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <p class="dress-code-final-message">
-                            <strong>Lo más importante:</strong> ¡Que te sientas cómodo y elegante para celebrar con nosotros! 💕
+                            <strong>Lo más importante:</strong> ¡Que te sientas cómodo y elegante para celebrar con
+                            nosotros! 💕
                         </p>
                     </div>
                 </div>
 
                 <!--Confirmación de Asistencia<-->
-            <div class="invitation-card">
-                <h2 class="section-title">✉️ Confirmación de Asistencia</h2>
-                <div class="confirmation-form">
-                    <div class="guest-search-section">
-                        <h4>Buscar mi invitación</h4>
-                        <div class="form-group">
-                            <label for="searchName">Ingresa tu nombre completo:</label>
-                            <input type="text" id="searchName" name="searchName" placeholder="Ej: Juan Pérez García">
-                            <!-- CAMBIO: Remover onclick y usar addEventListener -->
-                            <button type="button" id="searchButton" class="btn main-btn">Buscar</button>
-                        </div>
-                        <div id="searchResult" class="search-result" style="display: none;"></div>
-                    </div>
-
-                    <form id="confirmationForm" style="display: none;">
-                        <div class="form-group">
-                            <label for="guestName">Nombre completo del invitado principal *</label>
-                            <input type="text" id="guestName" name="guestName" readonly>
-                            <label for="phone">Teléfono (para tu confirmación)</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Ej: 5512345678">
-                        </div>
-                        <div class="form-group">
-                            <label for="attendance">¿Confirmas tu asistencia? *</label>
-                            <select id="attendance" name="attendance" required>
-                                <option value="">Selecciona una opción</option>
-                                <option value="si">Sí, asistiré con mucho gusto</option>
-                                <option value="no">No podré asistir</option>
-                            </select>
+                <div class="invitation-card">
+                    <h2 class="section-title">✉️ Confirmación de Asistencia</h2>
+                    <div class="confirmation-form">
+                        <div class="guest-search-section">
+                            <h4>Buscar mi invitación</h4>
+                            <div class="form-group">
+                                <label for="searchName">Ingresa tu nombre completo:</label>
+                                <input type="text" id="searchName" name="searchName"
+                                    placeholder="Ej: Juan Pérez García">
+                                <!-- CAMBIO: Remover onclick y usar addEventListener -->
+                                <button type="button" id="searchButton" class="btn main-btn">Buscar</button>
+                            </div>
+                            <div id="searchResult" class="search-result" style="display: none;"></div>
                         </div>
 
-                        <div id="companionsSection" class="companions-section" style="display: none;">
-                            <h4>Acompañantes</h4>
-                            <p class="companions-info">Puedes traer hasta <span id="maxCompanions">0</span>
-                                acompañantes.</p>
-
-                            <div id="companionsList">
+                        <form id="confirmationForm" style="display: none;">
+                            <div class="form-group">
+                                <label for="guestName">Nombre completo del invitado principal *</label>
+                                <input type="text" id="guestName" name="guestName" readonly>
+                                <label for="phone">Teléfono (para tu confirmación)</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Ej: 5512345678">
+                            </div>
+                            <div class="form-group">
+                                <label for="attendance">¿Confirmas tu asistencia? *</label>
+                                <select id="attendance" name="attendance" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="si">Sí, asistiré con mucho gusto</option>
+                                    <option value="no">No podré asistir</option>
+                                </select>
                             </div>
 
-                            <!-- CAMBIO: Remover onclick y usar addEventListener -->
-                            <button type="button" class="btn btn-secondary" id="addCompanionBtn">
-                                Agregar Acompañante
+                            <div id="companionsSection" class="companions-section" style="display: none;">
+                                <h4>Acompañantes</h4>
+                                <p class="companions-info">Puedes traer hasta <span id="maxCompanions">0</span>
+                                    acompañantes.</p>
+
+                                <div id="companionsList">
+                                </div>
+
+                                <!-- CAMBIO: Remover onclick y usar addEventListener -->
+                                <button type="button" class="btn btn-secondary" id="addCompanionBtn">
+                                    Agregar Acompañante
+                                </button>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dietary">Restricciones alimentarias o comentarios especiales</label>
+                                <textarea id="dietary" name="dietary" rows="3"
+                                    placeholder="Vegetariano, alérgico a..., etc."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-submit">
+                                Confirmar Asistencia
                             </button>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="dietary">Restricciones alimentarias o comentarios especiales</label>
-                            <textarea id="dietary" name="dietary" rows="3"
-                                placeholder="Vegetariano, alérgico a..., etc."></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-submit">
-                            Confirmar Asistencia
-                        </button>
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            </div>
 
-            <div class="invitation-card">
-                <h2 class="section-title">🎁 Mesa de Regalos</h2>
-                <div class="gifts-section">
+                <div class="invitation-card">
+                    <h2 class="section-title">🎁 Mesa de Regalos</h2>
+                    <div class="gifts-section">
                         <p class="gifts-intro-text">
-                            Tu presencia es nuestro mejor regalo. Sin embargo, si deseas contribuir a nuestra nueva vida, te agradecemos de corazón.
+                            Tu presencia es nuestro mejor regalo. Sin embargo, si deseas contribuir a nuestra nueva
+                            vida, te agradecemos de corazón.
                         </p>
 
-                <div class="gifts-list-container">
-                    <h4>Opciones para hacer un regalo:</h4>
-                    
-                    <!-- Lista de Bodas -->
-                    <div class="gift-option">
-                        <a href="https://www.amazon.com.mx/wedding/share/AngelyCeci" target="_blank"
-                            class="btn main-btn">
-                            Lista de Bodas en Amazon
-                        </a>
-                    </div>
+                        <div class="gifts-list-container">
+                            <h4>Opciones para hacer un regalo:</h4>
 
-<div class="gift-option">
-                        <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51839730"
-                            class="btn main-btn">
-                            Mesa de Regalos Liverpool
-                        </a>
-                    </div>
-                    
-                    <!-- Efectivo -->
-                    <div class="gift-option">
-                        <div class="cash-option">
-                            <h5>💰 Aportación en Efectivo</h5>
-                            <p>Puedes hacer tu aportación el día del evento en la mesa de regalos.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Transferencia Bancaria >
+                            <!-- Lista de Bodas -->
+                            <div class="gift-option">
+                                <a href="https://www.amazon.com.mx/wedding/share/AngelyCeci" target="_blank"
+                                    class="btn main-btn">
+                                    Lista de Bodas en Amazon
+                                </a>
+                            </div>
+
+                            <div class="gift-option">
+                                <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51839730"
+                                    class="btn main-btn">
+                                    Mesa de Regalos Liverpool
+                                </a>
+                            </div>
+
+                            <!-- Efectivo -->
+                            <div class="gift-option">
+                                <div class="cash-option">
+                                    <h5>💰 Aportación en Efectivo</h5>
+                                    <p>Puedes hacer tu aportación el día del evento en la mesa de regalos.</p>
+                                </div>
+                            </div>
+
+                            <!-- Transferencia Bancaria >
                     <div class="gift-option">
                         <div class="bank-transfer-section">
                             <h5>💳 Transferencia Bancaria</h5>
@@ -356,7 +377,7 @@
                             </div>
                             <div id="bankDetails" class="bank-details" style="display: none;">
                                 <!-- Aquí se mostrarán los detalles bancarios -->
-                            </div>
+                        </div>
                         </div-->
                     </div>
                 </div>
@@ -368,7 +389,7 @@
                 <div class="photos-drive">
                     <p>Comparte tus momentos especiales. Sube las fotos de la boda a nuestro Drive compartido.</p>
                 </div>
-                
+
                 <div class="qr-code-container">
                     <div id="qrcode-photos"></div>
                     <a href="https://drive.google.com/drive/folders/1LSnA-UfwqhEobzkuATcTOKlB_2an2cFD" target="_blank"
@@ -385,25 +406,25 @@
                 </div>
             </div>
         </div>
-    
+
         <!-- ✅ Modal QR -->
-<div id="qrModal" class="qr-modal">
-  <div class="qr-modal-content">
-    <button class="qr-modal-close" onclick="cerrarQrModal()">×</button>
-    <h3>Tu Código de Confirmación</h3>
-    <div class="qr-confirmation-details">
-      <h4>Escanea en la entrada</h4>
-      <p class="confirmation-number" id="confirmationNumber"></p>
-    </div>
-    <img id="qrImage" src="" alt="QR de Confirmación" class="qr-image" />
-    <div class="qr-actions">
-      <a id="downloadQrBtn" class="download-qr-btn">⬇ Descargar</a>
-      <a id="shareWhatsappBtn" class="share-whatsapp-btn" target="_blank">💬 Compartir</a>
-    </div>
-  </div>
-</div>
-<!-- ✅ Fin Modal QR -->
-    
+        <div id="qrModal" class="qr-modal">
+            <div class="qr-modal-content">
+                <button class="qr-modal-close" onclick="cerrarQrModal()">×</button>
+                <h3>Tu Código de Confirmación</h3>
+                <div class="qr-confirmation-details">
+                    <h4>Escanea en la entrada</h4>
+                    <p class="confirmation-number" id="confirmationNumber"></p>
+                </div>
+                <img id="qrImage" src="" alt="QR de Confirmación" class="qr-image" />
+                <div class="qr-actions">
+                    <a id="downloadQrBtn" class="download-qr-btn">⬇ Descargar</a>
+                    <a id="shareWhatsappBtn" class="share-whatsapp-btn" target="_blank">💬 Compartir</a>
+                </div>
+            </div>
+        </div>
+        <!-- ✅ Fin Modal QR -->
+
     </div>
 
     <script src="js/main.js"></script>
@@ -446,6 +467,9 @@
 
 
     </script>
+
+<script src="js/mejoras-adicionales.js"></script>
+
 </body>
 
 </html>

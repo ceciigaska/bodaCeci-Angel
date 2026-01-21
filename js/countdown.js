@@ -51,6 +51,14 @@ function updateCountdown() {
     if (hoursElement) hoursElement.textContent = String(hours).padStart(2, '0');
     if (minutesElement) minutesElement.textContent = String(minutes).padStart(2, '0');
     if (secondsElement) secondsElement.textContent = String(seconds).padStart(2, '0');
+
+
+    document.querySelectorAll('.time-number').forEach(el => {
+        el.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+            el.style.transform = 'scale(1)';
+        }, 200);
+    });
 }
 
 // ===== MOSTRAR MENSAJE DEL DÍA DE LA BODA =====
