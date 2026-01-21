@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cecilia & Ángel - Nuestra Boda</title>
+
+<!-- Vista previa para WhatsApp / Redes -->
+<meta property="og:image" content="https://raw.githubusercontent.com/ceciigaska23/bodaCeciyAngel/main/assets/images/boda2.png">
+<meta property="og:title" content="Cecilia & Ángel 💍 - Nuestra Boda">
+<meta property="og:description" content="Acompáñanos en este día tan especial ✨ Descubre todos los detalles aquí.">
+<meta property="og:url" content="https://ceciigaska23.github.io/bodaCeciyAngel/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:wght@300;400;600;700&family=Poppins:wght@300;400;500;600&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Edu+QLD+Hand:wght@400..700&family=Pacifico&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/splash.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body data-theme="light">
+    <div id="wedding-notification-bar" class="notification-bar"></div>
+    <div id="splashScreen" class="splash-screen">
+        <div class="splash-content">
+            <div class="wedding-rings">💍</div>
+            <h1 class="splash-title">Cecilia & Ángel</h1>
+            <p class="splash-subtitle">¡Nos casamos!</p>
+            <p class="splash-hint">30.10.2026</p>
+        </div>
+        <div class="splash-background"></div>
+    </div>
+
+    <audio id="weddingMusic" loop>
+        <source src="assets/audio/wedding-song.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <div id="mainContent" class="main-content" style="display: none;">
+        <div class="content-wrapper">
+            <!-- <button id="themeToggle" class="theme-toggle-btn">🌙</button> -->
+            <!-- <button class="icon-btn" id="musicToggle" title="Reproducir música">🎵</button> -->
+
+            <div class="invitation-card">
+                <div class="header">
+                    <!-- <div class="couple-image">
+                        <img src="assets/images/couple-photo.jpg" alt="Ceci y Ángel"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="couple-placeholder" style="display: none;">
+                            💕<br>Cecilia & Ángel
+                        </div>
+                    </div> -->
+                    <h1 class="couple-names">Cecilia & Ángel</h1>
+                    <p class="wedding-announcement">
+                        ¡Con el corazón lleno de alegría, los invitamos a compartir la celebración de nuestro amor!
+                    </p>
+                </div>
+
+                <div class="love-story">
+                    <h3>💕 Nuestra Historia</h3>
+                    <p>Esta historia comenzó en 2022, de la manera más inesperada. Aunque el destino nos unió, la
+                        vida nos puso a prueba, y nos distanciamos por un tiempo. Pero ese breve adiós no fue un final,
+                        sino una pausa necesaria para descubrir lo que realmente queríamos.</p>
+                    <p>Fue en mayo de 2025 cuando
+                        decidimos darnos una segunda oportunidad, una oportunidad para escribir juntos el futuro que
+                        siempre estuvo destinado para nosotros. Hoy, cada paso, cada desafío superado, nos ha unido más.
+                        Celebramos nuestro amor y nos preparamos para decir "sí, acepto" al camino que hemos construido.
+                    </p>
+                    <p class="love-quote">
+                        "El amor verdadero no tiene final feliz, porque el amor verdadero nunca termina"
+                    </p>
+                </div>
+            </div>
+
+            <!--countdown-->
+            <div class="invitation-card countdown-card">
+                <div class="countdown" id="countdown">
+                    <h2 class="countdown-title">Faltan...</h2>
+                    <div class="countdown-timer">
+                        <div class="time-unit">
+                            <span class="time-number" id="days">00</span>
+                            <span class="time-label">Días</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-number" id="hours">00</span>
+                            <span class="time-label">Horas</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-number" id="minutes">00</span>
+                            <span class="time-label">Minutos</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="time-number" id="seconds">00</span>
+                            <span class="time-label">Segundos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Ubicación-->
+            <div class="invitation-card">
+                <div class="location-section">
+                    <h2 class="section-title">📍 Ubicación</h2>
+
+                    <div class="location-details">
+                        <div class="venue-info">
+                            <h3>🏛️ Lienzo Charro "La Tapatía"</h3>
+                            <div class="ceremony-times">
+                                <p class="time-info"><strong>Recepción Ceremonia: </strong>💍 4:00pm</p>
+                                <p class="time-info"><strong>Boda Religiosa: </strong>⛪ 4:30pm</p>
+                                <p class="time-info"><strong>Recepción en Salón Jardín: </strong>🎉 6:30 a 7:00pm</p>
+                                <p class="same-venue">✨ Los eventos son en el mismo lugar ✨</p>
+                            </div>
+                            <p class="address">
+                                <strong>Dirección:</strong><br>
+                                Av Centenario 1100<br>
+                                Colinas de Tarango<br>
+                                Álvaro Obregón, 01620<br>
+                                Ciudad de México, CDMX
+                            </p>
+                            <button type="button" class="btn secondary-btn" onclick="copyAddress()">
+                                Copiar Dirección
+                            </button>
+                        </div>
+
+                        <div class="map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6330.474576100897!2d-99.22154704157212!3d19.363838941729956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d200448408c8b5%3A0x640c20e90d659f23!2sLienzo%20Charro%20La%20Tapatia!5e0!3m2!1ses!2smx!4v1757623053781!5m2!1ses!2smx"
+                                width="100" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+
+                        <div class="accordion-header" onclick="toggleAccordion()">
+                            <h4>Opciones de Transporte ➡️</h4>
+                        </div>
+                        <div class="location-info-grid accordion-content">
+                            <div class="info-card">
+                                <div class="info-icon">🚗</div>
+                                <h4>En Auto</h4>
+                                <p>Costo del Estacionamiento es de $50 por todo el evento<br> <small>Vía Periférico Sur
+                                        o Av. Centenario</small> </p>
+                            </div>
+                            <div class="info-card transport-card">
+                                <div class="info-icon">🚌</div>
+                                <h4>RTP y Microbús</h4>
+                                <p>Rutas directas: 57, Z2B, Z2C, 124<br> <small>Desde diferentes puntos de la
+                                        ciudad</small></p>
+                            </div>
+                            <div class="info-card">
+                                <div class="info-icon">🚖</div>
+                                <h4>Uber/DiDi/Taxi</h4>
+                                <p>Opción más cómoda y directa<br> <small>Aproximadamente 25-45 min desde el
+                                        centro</small></p>
+                            </div>
+                            <div class="info-card">
+                                <div class="info-icon">⏰</div>
+                                <h4>Tiempo de Viaje</h4>
+                                <p>Llega 15-20 min antes de la ceremonia<br> <small>Considera tráfico de fin de
+                                        semana</small></p>
+                            </div>
+                            
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dress Code Section -->
+                <div class="invitation-card">
+                    <h2 class="section-title">✨ Dress Code</h2>
+                    <div class="dress-code">
+                        <h3>Elegancia Garden Party</h3>
+                        <p>
+                            Nuestro evento será en <strong>Salón Jardín</strong> - un espacio semi-abierto con áreas verdes. 
+                            Viste elegante pero cómodo para disfrutar tanto en interiores como al aire libre.
+                        </p>
+                        
+                        <div class="venue-highlight">
+                            <p>
+                                🌿 <strong>Ambiente:</strong> Salón con jardín, piso firme y áreas de pasto • 🌤️ <strong>Clima:</strong> Semi-abierto, posible brisa
+                            </p>
+                        </div>
+                        
+                        <!--para ellas-->
+                        <div class="dress-code-grid">
+                            <div class="dress-option">
+                                <h4>👗 Para Ellas</h4>
+                                <p><strong>Vestidos:</strong> Midi o largo, evita telas muy delicadas</p>
+                                <p><strong>Zapatos:</strong> Tacón medio/bajo, flats elegantes o <strong>tennis blancos/neutros</strong> (¡perfectos para el jardín!)</p>
+                                <p><strong>Colores sugeridos:</strong> tonos tierra, verdes suaves, azul marino, florales</p>
+                                <p><strong>Evitar:</strong> blanco, ivory, beige muy claro y tacones de aguja</p>
+                                <div class="dress-colors">
+                                    <div class="color-swatch" style="background: #7bb5a8;" title="Verde sage"></div>
+                                    <div class="color-swatch" style="background: #d4764f;" title="Terracotta"></div>
+                                    <div class="color-swatch" style="background: #2c4875;" title="Azul marino"></div>
+                                    <div class="color-swatch" style="background: #8b6f47;" title="Café claro"></div>
+                                    <div class="color-swatch" style="background: #c19a6b;" title="Dorado suave"></div>
+                                </div>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 15px;">
+                                    💡 <strong>Tip:</strong> Los tennis son bienvenidos - ¡comodidad y estilo!. Lleva una pashmina ligera por si refresca
+                                </p>
+                            </div>
+                            
+                            <!--para ellos-->
+                            <div class="dress-option">
+                                <h4>👔 Para Ellos</h4>
+                                <p><strong>Trajes:</strong> de dos piezas o saco sport</p>
+                                <p><strong>Zapatos:</strong> de vestir cómodos o <strong>tennis elegantes/minimalistas</strong> (evita suelas muy lisas)</p>
+                                <p><strong>Colores sugeridos:</strong> azul marino, gris, negro, beige, lino</p>
+                                <p><strong>Corbata:</strong> opcional (recomendamos sin corbata para mayor comodidad)</p>
+                                <div class="dress-colors">
+                                    <div class="color-swatch" style="background: #2c4875;" title="Azul marino"></div>
+                                    <!--div class="color-swatch" style="background: #5a8a53;" title="Verde oliva"></div-->
+                                    <div class="color-swatch" style="background: #8b7355;" title="Beige"></div>
+                                    <div class="color-swatch" style="background: #6b6b6b;" title="Gris"></div>
+                                    <div class="color-swatch" style="background: #000000;" title="Verde oscuro"></div>
+                                </div>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 15px;">
+                                    💡 <strong>Tip:</strong> Tennis blancos o de cuero lucen geniales con traje. Telas frescas como lino o algodón son ideales
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!--Consejos para Salón Jardín-->
+                        <div class="garden-tips">
+                            <h4>🌱 Consejos para Salón Jardín</h4>
+                            <div class="tips-grid">
+                                <div>
+                                    <p><strong>👟 Zapatos:</strong> Tennis elegantes son bienvenidos - ¡comodidad y estilo unidos!</p>
+                                </div>
+                                <div>
+                                    <p><strong>🧥 Abrigo:</strong> El salón puede tener aire acondicionado, considera una chaqueta ligera</p>
+                                </div>
+                                <div>
+                                    <p><strong>🌿 Telas:</strong> Evita telas muy delicadas que se puedan enganchar con plantas</p>
+                                </div>
+                                <div>
+                                    <p><strong>☀️ Protección:</strong> Habrá áreas techadas y al aire libre</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p class="dress-code-final-message">
+                            <strong>Lo más importante:</strong> ¡Que te sientas cómodo y elegante para celebrar con nosotros! 💕
+                        </p>
+                    </div>
+                </div>
+
+                <!--Confirmación de Asistencia<-->
+            <div class="invitation-card">
+                <h2 class="section-title">✉️ Confirmación de Asistencia</h2>
+                <div class="confirmation-form">
+                    <div class="guest-search-section">
+                        <h4>Buscar mi invitación</h4>
+                        <div class="form-group">
+                            <label for="searchName">Ingresa tu nombre completo:</label>
+                            <input type="text" id="searchName" name="searchName" placeholder="Ej: Juan Pérez García">
+                            <!-- CAMBIO: Remover onclick y usar addEventListener -->
+                            <button type="button" id="searchButton" class="btn main-btn">Buscar</button>
+                        </div>
+                        <div id="searchResult" class="search-result" style="display: none;"></div>
+                    </div>
+
+                    <form id="confirmationForm" style="display: none;">
+                        <div class="form-group">
+                            <label for="guestName">Nombre completo del invitado principal *</label>
+                            <input type="text" id="guestName" name="guestName" readonly>
+                            <label for="phone">Teléfono (para tu confirmación)</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Ej: 5512345678">
+                        </div>
+                        <div class="form-group">
+                            <label for="attendance">¿Confirmas tu asistencia? *</label>
+                            <select id="attendance" name="attendance" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="si">Sí, asistiré con mucho gusto</option>
+                                <option value="no">No podré asistir</option>
+                            </select>
+                        </div>
+
+                        <div id="companionsSection" class="companions-section" style="display: none;">
+                            <h4>Acompañantes</h4>
+                            <p class="companions-info">Puedes traer hasta <span id="maxCompanions">0</span>
+                                acompañantes.</p>
+
+                            <div id="companionsList">
+                            </div>
+
+                            <!-- CAMBIO: Remover onclick y usar addEventListener -->
+                            <button type="button" class="btn btn-secondary" id="addCompanionBtn">
+                                Agregar Acompañante
+                            </button>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dietary">Restricciones alimentarias o comentarios especiales</label>
+                            <textarea id="dietary" name="dietary" rows="3"
+                                placeholder="Vegetariano, alérgico a..., etc."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-submit">
+                            Confirmar Asistencia
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="invitation-card">
+                <h2 class="section-title">🎁 Mesa de Regalos</h2>
+                <div class="gifts-section">
+                        <p class="gifts-intro-text">
+                            Tu presencia es nuestro mejor regalo. Sin embargo, si deseas contribuir a nuestra nueva vida, te agradecemos de corazón.
+                        </p>
+
+                <div class="gifts-list-container">
+                    <h4>Opciones para hacer un regalo:</h4>
+                    
+                    <!-- Lista de Bodas -->
+                    <div class="gift-option">
+                        <a href="https://www.amazon.com.mx/wedding/share/AngelyCeci" target="_blank"
+                            class="btn main-btn">
+                            Lista de Bodas en Amazon
+                        </a>
+                    </div>
+
+<div class="gift-option">
+                        <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51839730"
+                            class="btn main-btn">
+                            Mesa de Regalos Liverpool
+                        </a>
+                    </div>
+                    
+                    <!-- Efectivo -->
+                    <div class="gift-option">
+                        <div class="cash-option">
+                            <h5>💰 Aportación en Efectivo</h5>
+                            <p>Puedes hacer tu aportación el día del evento en la mesa de regalos.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Transferencia Bancaria >
+                    <div class="gift-option">
+                        <div class="bank-transfer-section">
+                            <h5>💳 Transferencia Bancaria</h5>
+                            <div class="form-group">
+                                <label for="bankSelect">Selecciona el banco:</label>
+                                <select id="bankSelect" onchange="showBankDetails()">
+                                    <option value="">Selecciona un banco</option>
+                                    <option value="bbva">BBVA</option>
+                                    <option value="santander">Santander</option>
+                                    <option value="banamex">Banamex</option>
+                                </select>
+                            </div>
+                            <div id="bankDetails" class="bank-details" style="display: none;">
+                                <!-- Aquí se mostrarán los detalles bancarios -->
+                            </div>
+                        </div-->
+                    </div>
+                </div>
+            </div>
+
+            <!--Drive de Fotos-->
+            <div class="invitation-card">
+                <h2 class="section-title">📸 Drive de Fotos</h2>
+                <div class="photos-drive">
+                    <p>Comparte tus momentos especiales. Sube las fotos de la boda a nuestro Drive compartido.</p>
+                </div>
+                
+                <div class="qr-code-container">
+                    <div id="qrcode-photos"></div>
+                    <a href="https://drive.google.com/drive/folders/1LSnA-UfwqhEobzkuATcTOKlB_2an2cFD" target="_blank"
+                        class="btn main-btn">
+                        Subir Fotos
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>© 2026 Cecilia & Ángel. Todos los derechos reservados.</p>
+                <div class="footer-buttons">
+                    <button class="btn music-toggle-btn" id="musicToggle" onclick="toggleMusic()">🎵</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- ✅ Modal QR -->
+<div id="qrModal" class="qr-modal">
+  <div class="qr-modal-content">
+    <button class="qr-modal-close" onclick="cerrarQrModal()">×</button>
+    <h3>Tu Código de Confirmación</h3>
+    <div class="qr-confirmation-details">
+      <h4>Escanea en la entrada</h4>
+      <p class="confirmation-number" id="confirmationNumber"></p>
+    </div>
+    <img id="qrImage" src="" alt="QR de Confirmación" class="qr-image" />
+    <div class="qr-actions">
+      <a id="downloadQrBtn" class="download-qr-btn">⬇ Descargar</a>
+      <a id="shareWhatsappBtn" class="share-whatsapp-btn" target="_blank">💬 Compartir</a>
+    </div>
+  </div>
+</div>
+<!-- ✅ Fin Modal QR -->
+    
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/form-handler.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const qrCodeUrl = "https://drive.google.com/drive/folders/1LSnA-UfwqhEobzkuATcTOKlB_2an2cFD";
+            const qrcodeContainer = document.getElementById("qrcode-container");
+            const qrcodePhotos = document.getElementById("qrcode-photos");
+
+            // QR para fotos
+            if (qrcodePhotos && typeof QRCode !== 'undefined') {
+                new QRCode(qrcodePhotos, {
+                    text: qrCodeUrl,
+                    width: 150,
+                    height: 150,
+                    colorDark: "#192F58", // Teal oscuro de la paleta
+                    colorLight: "#fdf8f0", // Crema claro
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+            }
+        });
+
+        function toggleAccordion() {
+            const content = document.querySelector('.accordion-content');
+            const header = document.querySelector('.accordion-header');
+
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                content.style.display = 'none';
+                header.classList.remove('active');
+            } else {
+                content.style.display = 'grid'; // O 'block', según tu diseño
+                content.style.maxHeight = content.scrollHeight + 'px';
+                header.classList.add('active');
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

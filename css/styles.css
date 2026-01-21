@@ -1,0 +1,1740 @@
+/* ===== VARIABLES CSS PARA PALETA TERRACOTTA ===== */
+:root {
+    /* Paleta de colores Terracotta */
+    --sage-light: #a8c4a2;
+    --sage-medium: #7bb5a8;
+    --sage-dark: #4a6741;
+    --teal-light: #4dd0c7;
+    --teal-dark: #378b85;
+    --cream-light: #fdf8f0;
+    --cream: #f5ede4;
+    --cream-dark: #e6d7c3;
+    --terracotta-light: #e6a085;
+    --terracotta: #d4764f;
+    --terracotta-dark: #b85a3e;
+    --brown-light: #8b6f47;
+    --brown: #6b5b73;
+    --brown-dark: #4a3d2a;
+    --navy: #192F58;
+    /* Este es el nuevo color azul marino */
+
+    /* Tema Claro */
+    --bg-color-light: var(--cream-light);
+    --bg-gradient-light: linear-gradient(135deg, var(--cream-light) 0%, var(--cream) 100%);
+    --card-bg-light: rgba(255, 255, 255, 0.7);
+    --text-color-light: var(--navy);
+    /* El texto ahora será azul marino */
+    --primary-color-light: var(--terracotta);
+    --secondary-color-light: var(--sage-medium);
+    /* Mantiene el verde para un acento sutil */
+    --tertiary-color-light: var(--terracotta);
+    --border-color-light: var(--navy);
+    /* El borde de las tarjetas será azul marino */
+    --shadow-color-light: rgba(0, 0, 0, 0.05);
+
+    /* Paleta de colores para el tema claro */
+    --primary-color: #fdf8f0;
+    /* Crema claro */
+    --secondary-color: #d8c2b4;
+    /* Café claro */
+    --accent-color: #4dd0c7;
+    /* Teal brillante */
+    --dark-color: #378b85;
+    /* Teal oscuro */
+    --color-light: #fdf8f0;
+    --color-dark: #378b85;
+
+    /* Nuevas fuentes disponibles */
+    --font-handwriting: 'Edu QLD Hand', cursive;
+    /* Fuente de escritura a mano */
+    --font-playful: 'Pacifico', cursive;
+    /* Fuente divertida y redondeada */
+    --font-elegant: 'Dancing Script', cursive;
+    /* Fuente elegante para títulos */
+    --font-serif: 'Playfair Display', serif;
+    /* Fuente serif clásica */
+    --font-body: 'Inter', sans-serif;
+    /* Fuente para texto general */
+    --font-classic: 'Cormorant Garamond', serif;
+    /* Fuente clásica */
+}
+
+
+
+/* ===== FONT IMPORTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes:wght@400&family=Nunito:wght@300;400;600;700&family=Poppins:wght@300;400;500;600&family=Quicksand:wght@400;500;600;700&display=swap');
+
+
+/* ===== GENERAL STYLES - WEDDING INVITATION ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color-light);
+    background: var(--bg-gradient-light);
+    min-height: 100vh;
+    transition: all 0.5s ease;
+} */
+
+body {
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color-light);
+    /* Fondo con el degradado y el borde */
+    background-image: url('../assets/images/floral-wreath.png'), var(--bg-gradient-light);
+    background-size: contain, cover;
+    /* 'contain' para el borde y 'cover' para el degradado */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    transition: all 0.5s ease;
+    /* animation: background-zoom-in 20s ease-in-out forwards infinite; */
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.main-content.show {
+    opacity: 1;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.invitation-card {
+    /* background: var(--card-bg-light); */
+    border-radius: 20px;
+    box-shadow: 0 20px 40px var(--shadow-color-light);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    margin: 20px 0;
+    border: 1px solid var(--border-color-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.invitation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px var(--shadow-color-light);
+}
+
+/* ===== HEADER SECTION ===== */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.couple-names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    font-weight: bold;
+    color: #3c72b3;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: nameGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes nameGlow {
+    0% {
+        color: #3c72b3;
+    }
+
+    100% {
+        color: var(--secondary-color-light);
+    }
+}
+
+.wedding-announcement {
+    font-family: "Coming Soon", cursive;
+    font-size: 1.5rem;
+    color: var(--dark-color);
+    font-style: italic;
+    font-weight: 600;
+}
+
+.couple-image {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    margin: 0 auto 30px;
+    background: linear-gradient(45deg, #3c72b3, var(--secondary-color-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px var(--shadow-color-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.couple-image::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.couple-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    z-index: 1;
+}
+
+.couple-placeholder {
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    z-index: 1;
+}
+
+/* ===== LOVE STORY SECTION ===== */
+.love-story {
+    /* background-color: var(--card-bg-light); */
+    padding: 35px;
+    border-radius: 20px;
+    margin: 30px 0;
+    border-left: 6px solid #3c72b3;
+    position: relative;
+    overflow: hidden;
+}
+
+/* [data-theme="dark"] .love-story {
+    background: rgba(44, 62, 80, 0.7);
+} */
+
+.love-story::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(55, 139, 133, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.love-story h3 {
+    font-family: var(--font-playful);
+    color: #3c72b3;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.love-story p {
+    font-family: "Coming Soon", cursive;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color-light);
+}
+
+.love-quote {
+    font-style: italic;
+    color: var(--secondary-color-light);
+    text-align: center;
+    margin-top: 25px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-top: 2px solid #3c72b3;
+    padding-top: 20px;
+}
+
+/* ===== COUNTDOWN SECTION ===== */
+.countdown-card {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    /* background-color: rgba(55, 139, 133, 0.1); */
+}
+
+.countdown {
+    text-align: center;
+    margin: 40px 0;
+    padding: 35px;
+    background: var(--card-bg-light);
+    border-radius: 20px;
+    color: var(--countdown-text-light);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 35px var(--shadow-color-light);
+    background-color: rgba(55, 139, 133, 0.1);
+}
+
+.countdown::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(45deg,
+            transparent,
+            transparent 10px,
+            rgba(255, 255, 255, 0.05) 10px,
+            rgba(255, 255, 255, 0.05) 20px);
+    animation: countdownPattern 20s linear infinite;
+}
+
+@keyframes countdownPattern {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.countdown-title {
+    font-family: var(--font-playful);
+    margin-bottom: 25px;
+    font-size: 2rem;
+    font-weight: 600;
+    z-index: 1;
+    position: relative;
+    color: #3c72b3;
+    /* background-color: rgba(55, 139, 133, 0.1); */
+}
+
+.countdown-timer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+    z-index: 1;
+    position: relative;
+    /* background-color: rgba(55, 139, 133, 0.1); */
+}
+
+.time-unit {
+    background: var(--card-bg-light);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--countdown-unit-border-light);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.time-unit:hover {
+    transform: scale(1.05);
+}
+
+.time-number {
+    font-family: "Coming Soon", cursive;
+    font-size: 2.8rem;
+    font-weight: bold;
+    display: block;
+    animation: numberPulse 2s ease-in-out infinite;
+    color: #3c72b3;
+}
+
+@keyframes numberPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.time-label {
+    font-family: "Coming Soon", cursive;
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: 500;
+    color: var(--countdown-label-text-light);
+}
+
+/* ===== WEDDING DETAILS ===== */
+.wedding-details {
+    text-align: center;
+    background: var(--card-bg-light);
+    padding: 35px;
+    border-radius: 20px;
+    margin: 30px 0;
+    border: 2px solid #3c72b3;
+    box-shadow: 0 10px 30px var(--shadow-color-light);
+}
+
+.wedding-details h3 {
+    font-family: var(--font-playful);
+    color: #3c72b3;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.wedding-details p {
+    margin: 12px 0;
+    font-size: 1.2rem;
+    color: var(--secondary-color-light);
+}
+
+.wedding-details strong {
+    color: #3c72b3;
+    font-weight: 600;
+}
+
+/* ===== SECTION TITLES ===== */
+.section-title {
+    font-family: var(--font-playful);
+    text-align: center;
+    color: #3c72b3;
+    font-size: 2.5rem;
+    margin: 50px 0 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-weight: 700;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #3c72b3, var(--secondary-color-light));
+    border-radius: 2px;
+}
+
+/* ===== LOCATION & TRANSPORT SECTION ===== */
+.location-section {
+    text-align: center;
+}
+
+.location-details {
+    margin-top: 30px;
+}
+
+.venue-info {
+    /* background-color: var(--card-bg-light); */
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border-left: 5px solid #3c72b3;
+}
+
+/* [data-theme="dark"] .venue-info {
+    background: rgba(44, 62, 80, 0.7);
+} */
+
+.venue-info h3 {
+    font-family: var(--font-playful);
+    color: #3c72b3;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.ceremony-times {
+    background: rgba(55, 139, 133, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+    border: 2px solid var(--border-color-light);
+}
+
+.time-info {
+    font-family: "Coming Soon", cursive;
+    color: #3c72b3;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 8px 0;
+}
+
+.time-info strong {
+    color: #3c72b3;
+}
+
+.same-venue {
+    color: var(--dark-color);
+    font-family: "Coming Soon", cursive;
+    font-style: italic;
+    font-weight: 500;
+    margin: 15px 0 5px 0;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.address {
+    color: var(--dark-color);
+    font-family: "Coming Soon", cursive;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.address strong {
+    color: #3c72b3;
+    font-weight: 600;
+}
+
+/* Contenedor del mapa */
+.map-container {
+    position: relative;
+    margin: 30px 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px var(--shadow-color-light);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+}
+
+/* Grid de información */
+.location-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.info-card {
+    background: var(--card-bg-light);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid var(--border-color-light);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #3c72b3, var(--secondary-color-light));
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px var(--shadow-color-light);
+}
+
+.transport-card {
+    grid-column: span 1;
+}
+
+.transport-options {
+    text-align: left;
+    margin: 10px 0;
+}
+
+.transport-options p {
+    margin: 8px 0;
+    padding-left: 5px;
+}
+
+.transport-options strong {
+    color: #3c72b3;
+    font-weight: 600;
+}
+
+.future-transport {
+    border: 2px dashed var(--border-color-light);
+    background: rgba(55, 139, 133, 0.05);
+}
+
+.future-transport .info-icon {
+    opacity: 0.7;
+}
+
+.info-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    animation: infoIconFloat 3s ease-in-out infinite;
+    color: var(--tertiary-color-light);
+}
+
+@keyframes infoIconFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.info-card h4 {
+    font-family: var(--font-playful);
+    color: #3c72b3;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.info-card p {
+    color: var(--text-color-light);
+    font-family: "Coming Soon", cursive;
+}
+
+/* ===== RSVP SECTION ===== */
+.rsvp-card {
+    text-align: center;
+}
+
+.rsvp-text {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    margin: 20px 0;
+    color: var(--secondary-color-light);
+}
+
+.search-input-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 20px;
+    border: 2px solid var(--border-color-light);
+    border-radius: 25px;
+    background: var(--card-bg-light);
+    color: var(--text-color-light);
+    font-family: 'Nunito', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #3c72b3;
+    box-shadow: 0 0 10px var(--border-color-light);
+    outline: none;
+}
+
+.search-button {
+    background: linear-gradient(45deg, #3c72b3, var(--secondary-color-light));
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: var(--font-playful);
+    transition: all 0.3s ease;
+}
+
+.search-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--shadow-color-light);
+}
+
+.search-result {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(55, 139, 133, 0.1);
+    border: 1px solid var(--border-color-light);
+    color: var(--secondary-color-light);
+}
+
+.guest-info {
+    margin-top: 25px;
+}
+
+.guest-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 20px;
+    border: 2px solid var(--border-color-light);
+    border-radius: 25px;
+    background: var(--card-bg-light);
+    color: var(--text-color-light);
+    margin: 10px 0;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+}
+
+.guest-input:focus {
+    border-color: #3c72b3 !important;
+    box-shadow: 0 0 10px var(--border-color-light);
+    outline: none;
+    transform: translateY(-1px);
+}
+
+.submit-button {
+    background: linear-gradient(45deg, var(--tertiary-color-light));
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: var(--font-playful);
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 118, 79, 0.4);
+}
+
+/* ===== QR SECTION ===== */
+.qr-section {
+    text-align: center;
+}
+
+.qr-code-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+#qrcode-container,
+#qrcode-photos {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px var(--shadow-color-light);
+    border: 3px solid #3c72b3;
+}
+
+.qr-section p {
+    color: var(--text-color-light);
+    line-height: 1.6;
+}
+.photos-drive{
+    font-family: "Coming Soon", cursive;
+}
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+    color: var(--secondary-color-light);
+    font-family: "Coming Soon", cursive;
+}
+
+.footer-buttons {
+    margin-top: 15px;
+}
+
+.music-toggle-btn {
+    background: var(--card-bg-light);
+    color: #3c72b3;
+    border: 2px solid #3c72b3;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px var(--shadow-color-light);
+}
+
+.music-toggle-btn:hover {
+    transform: scale(1.1);
+    background: #3c72b3;
+    color: white;
+}
+
+/* Botón de tema */
+.theme-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    background: var(--card-bg-light);
+    color: #3c72b3;
+    border: 2px solid #3c72b3;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px var(--shadow-color-light);
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1);
+    background: #3c72b3;
+    color: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .couple-names {
+        font-size: 3rem;
+    }
+
+    .countdown-timer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .search-input-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-input {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .couple-names {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .invitation-card {
+        padding: 25px;
+    }
+}
+
+/* New Form Styles */
+.confirmation-form {
+    padding: 20px;
+    border: 1px solid var(--border-color-light);
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.confirmation-form h4 {
+    color: #3c72b3;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: "Coming Soon", cursive;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--secondary-color-light);
+    font-family: "Coming Soon", cursive;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color-light);
+    border-radius: 8px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    color: var(--text-color-light);
+    background: var(--card-bg-light);
+    transition: all 0.3s ease;
+    font-family: "Coming Soon", cursive;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #3c72b3;
+    box-shadow: 0 0 8px var(--border-color-light);
+    font-family: "Coming Soon", cursive;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    /* Borde más redondeado para un look elegante */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* Transición suave para todos los cambios */
+    border: 2px solid transparent;
+    /* Borde transparente para efecto de borde */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Sombra para dar profundidad */
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-submit {
+    background: linear-gradient(45deg, var(--tertiary-color-light));
+    color: white;
+}
+
+.btn-submit:hover {
+    box-shadow: 0 8px 20px rgba(212, 118, 79, 0.4);
+}
+
+.btn-secondary {
+    background: var(--card-bg-light);
+    color: var(--secondary-color-light);
+    border: 2px solid var(--secondary-color-light);
+}
+
+.btn-secondary:hover {
+    background: var(--secondary-color-light);
+    color: white;
+}
+
+.main-btn {
+    color: var(--color-light);
+    /* Color de texto claro */
+    background-color: var(--terracotta);
+    /* Color de acento de la paleta */
+    font-family: "Coming Soon", cursive;
+}
+
+/* Efecto al pasar el cursor */
+.main-btn:hover {
+    transform: translateY(-3px);
+    /* Pequeña elevación */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    /* Sombra más pronunciada */
+}
+
+/* Ajustes para el tema oscuro */
+/* body[data-theme="dark"] .main-btn {
+    color: var(--color-dark);
+    background-color: var(--accent-color-dark);
+} */
+
+.companions-info {
+    font-size: 0.9em;
+    font-style: italic;
+    color: var(--secondary-color-light);
+    margin-bottom: 15px;
+}
+
+.companions-section {
+    border-top: 1px solid var(--border-color-light);
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.companions-section h4 {
+    color: var(--secondary-color-light);
+}
+
+.companions-list {
+    margin-top: 10px;
+}
+
+.companion-input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.companion-input-group input {
+    flex-grow: 1;
+}
+
+.remove-companion-btn {
+    background: var(--tertiary-color-light);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondary-btn {
+    color: var(--accent-color);
+    font-family: "Coming Soon", cursive;
+    /* Color de acento en el texto */
+    background-color: transparent;
+    border-color: var(--accent-color);
+    /* El color del borde coincide con el texto */
+}
+
+/* Efecto al pasar el cursor */
+.secondary-btn:hover {
+    background-color: var(--accent-color);
+    /* El fondo se rellena con el color de acento */
+    color: var(--color-light);
+    /* El texto se vuelve claro */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Ajustes para el tema oscuro */
+/* [data-theme="dark"] .secondary-btn {
+    color: var(--accent-color-dark);
+    border-color: var(--accent-color-dark);
+} */
+/* 
+[data-theme="dark"] .secondary-btn:hover {
+    background-color: var(--accent-color-dark);
+    color: var(--color-dark);
+} */
+
+/* Nuevo estilo para los grupos de inputs de acompañantes */
+.companion-input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    /* Permite que los elementos se apilen en móviles */
+    align-items: center;
+}
+
+/* Estilo para el campo de nombre de solo lectura */
+.companion-input-group input[name="companionName[]"][readonly] {
+    background-color: var(--cream-dark);
+    /* Un color de fondo más oscuro */
+    border: 1px solid var(--border-color-light);
+    color: var(--text-color-light);
+    cursor: default;
+    /* Indica que no se puede editar */
+    font-weight: 600;
+    /* Hace que el texto resalte un poco más */
+}
+
+/* Asegura que los selects también se vean bien en el grupo */
+.companion-input-group select {
+    flex-grow: 1;
+    /* Permite que los selects se expandan */
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .companion-input-group {
+        flex-direction: column;
+    }
+}
+
+/* Agrega este nuevo estilo al final de tu styles.css */
+.content-wrapper {
+    display: flex;
+    /* O 'grid' si lo prefieres */
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    /* Ajusta este valor para que quepa dentro del borde */
+    margin: 0 auto;
+    padding: 20px;
+    z-index: 2;
+    /* Asegura que el contenido esté por encima del fondo */
+}
+
+.accordion-header {
+    font-family: "Coming Soon", cursive;
+    cursor: pointer;
+    background-color: #f7f7f7;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #eaeaea;
+}
+
+.accordion-header h4 {
+    margin: 0;
+}
+
+.accordion-content {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.accordion-content.open {
+    display: grid;
+    max-height: 1000px;
+    /* Asegúrate de que este valor sea lo suficientemente grande para todo el contenido */
+    transition: max-height 0.5s ease-in;
+}
+
+.accordion-header .arrow {
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active .arrow {
+    transform: rotate(90deg);
+}
+
+.location-info-grid {
+    display: grid;
+    gap: 15px;
+}
+
+/* Animación para el fondo que crea un efecto de sutil movimiento y zoom */
+@keyframes background-zoom-in {
+    0% {
+        background-size: 150% 150%;
+        background-position: center center;
+    }
+
+    100% {
+        background-size: 100% 100%;
+        background-position: center center;
+    }
+}
+
+/* ===== MESA DE REGALOS STYLES ===== */
+.gifts-list-container {
+    margin-top: 25px;
+}
+
+.gifts-section {
+            text-align: center;
+            font-family: "Coming Soon", cursive;
+        }
+
+
+.gift-option {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 15px;
+    background: var(--card-bg-light);
+    border: 2px solid var(--border-color-light);
+}
+
+.cash-option,
+.bank-transfer-section {
+    text-align: center;
+}
+
+.cash-option h5,
+.bank-transfer-section h5 {
+    color: #3c72b3;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.bank-details {
+    background: rgba(55, 139, 133, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.bank-info {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 20px;
+    margin: 15px 0;
+}
+
+.bank-info strong {
+    color: #3c72b3;
+}
+
+.copy-account-btn {
+    background: linear-gradient(45deg, #3c72b3, var(--secondary-color-light));
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.copy-account-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(60, 114, 179, 0.3);
+}
+
+/* ===== QR MODAL STYLES ===== */
+.qr-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+.qr-modal.show {
+    display: flex;
+}
+
+.qr-modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.qr-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.qr-modal-close:hover {
+    color: #333;
+}
+
+.qr-confirmation-details {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(55, 139, 133, 0.1);
+    border-radius: 10px;
+    border: 2px solid var(--border-color-light);
+}
+
+.qr-confirmation-details h4 {
+    color: #3c72b3;
+    margin-bottom: 10px;
+}
+
+.confirmation-number {
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--tertiary-color-light);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color-light);
+}
+
+.qr-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.download-qr-btn,
+.share-whatsapp-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.download-qr-btn {
+    background: linear-gradient(45deg, #3c72b3, var(--secondary-color-light));
+    color: white;
+}
+
+.share-whatsapp-btn {
+    background: #25D366;
+    color: white;
+}
+
+.download-qr-btn:hover,
+.share-whatsapp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== CONFIRMATION STATUS STYLES ===== */
+.confirmation-status {
+    background: rgba(55, 139, 133, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid var(--border-color-light);
+    margin-top: 20px;
+}
+
+.status-confirmed {
+    border-color: #4dd0c7;
+    background: rgba(77, 208, 199, 0.1);
+}
+
+.status-confirmed .status-icon {
+    color: #378b85;
+}
+
+.status-pending {
+    border-color: #d4764f;
+    background: rgba(212, 118, 79, 0.1);
+}
+
+.status-pending .status-icon {
+    color: #d4764f;
+}
+
+.status-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.status-icon {
+    font-size: 1.5rem;
+}
+
+.modify-attendance-btn {
+    background: linear-gradient(45deg, var(--secondary-color-light), #5a9aa8);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.modify-attendance-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(123, 181, 168, 0.4);
+}
+
+@keyframes modalFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive adjustments */
+/* ===== CANCEL OPTIONS STYLES ===== */
+.cancel-options {
+    text-align: center;
+    padding: 20px;
+}
+
+.cancel-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.cancel-buttons .btn {
+    min-width: 200px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cancel-buttons .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.warning-message {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.warning-message a {
+    color: #3c72b3;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.warning-message a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .cancel-buttons {
+        flex-direction: column;
+    }
+
+    .cancel-buttons .btn {
+        width: 100%;
+    }
+}
+
+/* ===== NOTIFICATION BAR STYLES ===== */
+.notification-bar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    left: 20px;
+    z-index: 10001;
+    padding: 15px 20px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: slideInNotification 0.3s ease-out;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.notification-bar.success {
+    background: linear-gradient(135deg, #378b85, #4dd0c7);
+}
+
+.notification-bar.error {
+    background: linear-gradient(135deg, #d4764f, #b85a3e);
+}
+
+.notification-bar.info {
+    background: linear-gradient(135deg, #7bb5a8, #5a9aa8);
+}
+
+.notification-bar.loading {
+    background: linear-gradient(135deg, #7bb5a8, #5a9aa8);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes slideInNotification {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+@media (max-width: 768px) {
+    .notification-bar {
+        left: 10px;
+        right: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+.qr-section {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.qr-section img.qr-image {
+    max-width: 200px;
+    border: 5px solid #4dd0c7;
+    border-radius: 12px;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.validation-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--background-color, #fdf8f0);
+    font-family: 'Poppins', sans-serif;
+}
+
+.validation-container {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.validation-result {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.validation-result .success {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.validation-result .error {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* ===== DRESS CODE SECTION ===== */
+.dress-code {
+    background: linear-gradient(135deg, var(--gold-light) 0%, rgba(244, 228, 166, 0.3) 100%);
+    padding: 40px;
+    border-radius: 20px;
+    margin: 30px 0;
+    /* border: 2px solid var(--gold); */
+    text-align: center;
+    position: relative;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    font-family: "Coming Soon", cursive;
+}
+
+.dress-code::before {
+    content: '👔';
+    position: absolute;
+    top: -15px;
+    left: 30px;
+    font-size: 2rem;
+    background: var(--card-bg);
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.dress-code::after {
+    content: '👗';
+    position: absolute;
+    top: -15px;
+    right: 30px;
+    font-size: 2rem;
+    background: var(--card-bg);
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.dress-code h3 {
+    font-family: "Coming Soon", cursive;
+    color: var(--dark-color);
+    margin-bottom: 25px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.dress-code-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+    font-family: "Coming Soon", cursive;
+}
+
+.dress-option {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px solid var(--gold);
+    transition: all 0.3s ease;
+}
+
+.dress-option:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+}
+
+.dress-option h4 {
+    font-family: "Coming Soon", cursive;
+    color: var(--dark-color);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.dress-option p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.dress-colors {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.color-swatch {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    margin: 2px;
+}
+
+element.style {
+    margin: 0;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+/* ===== GARDEN TIPS SECTION ===== */
+.garden-tips {
+    background: var(--gold-light);
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 30px;
+    border: 2px solid var(--gold);
+    text-align: center;
+}
+
+.garden-tips h4 {
+    color: var(--color-dark);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-family: "Coming Soon", cursive;
+    font-weight: 600;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    text-align: left;
+}
+
+.tips-grid div p {
+    margin: 0;
+    line-height: 1.5;
+    color: var(--text-primary);
+    font-family: "Coming Soon", cursive;
+}
+
+.tips-grid strong {
+    color: var(--color-dark);
+    font-weight: 600;
+}
+
+/* ===== DRESS CODE FINAL MESSAGE ===== */
+.dress-code-final-message {
+    margin-top: 25px;
+    font-style: italic;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--color-dark);
+    font-family: var(--font-handwriting);
+    font-weight: 500;
+}
+
+.dress-code-final-message strong {
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.venue-highlight {
+    background: rgba(77, 208, 199, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 25px 0;
+    border-left: 4px solid var(--teal-light);
+    transition: all 0.3s ease;
+}
+
+.venue-highlight p {
+    margin: 0;
+    font-weight: 500;
+    color: var(--color-dark);
+    font-family: "Coming Soon", cursive;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.venue-highlight strong {
+    color: var(--color-dark);
+    font-weight: 600;
+}
+
+.venue-highlight:hover {
+    background: rgba(77, 208, 199, 0.15);
+    transform: translateX(3px);
+    box-shadow: 0 4px 12px rgba(77, 208, 199, 0.2);
+}
