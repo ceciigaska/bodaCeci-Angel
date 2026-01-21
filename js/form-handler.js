@@ -10,7 +10,7 @@ const getBackendUrl = () => {
     return "http://localhost:3000";
   }
   // Si no, usar la URL de producción de Vercel
-  return "https://boda-cecily-angel-backend.vercel.app";
+  return "https://boda-ceci-angel-bnd.vercel.app";
 };
 
 
