@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cecilia & Ángel - Demo Canvas</title>
+    
+    <!-- Tus estilos originales -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:wght@300;400;600;700&family=Poppins:wght@300;400;500;600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilos base para la demo */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #fdf8f0 0%, #e8dcc9 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .demo-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .demo-header h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: #3c72b3;
+            margin-bottom: 10px;
+        }
+
+        .demo-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .controls-panel {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .controls-panel h2 {
+            color: #3c72b3;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .control-group {
+            margin-bottom: 20px;
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #3c72b3, #7bb5a8);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(60, 114, 179, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #d4764f, #b85a3e);
+        }
+
+        .demo-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .demo-section h3 {
+            color: #3c72b3;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .demo-section p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card .icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h4 {
+            color: #3c72b3;
+            margin-bottom: 10px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(60, 114, 179, 0.1);
+            border-radius: 10px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #3c72b3;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #7bb5a8;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        @media (max-width: 768px) {
+            .demo-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .controls-panel {
+                padding: 20px;
+            }
+
+            .demo-section {
+                padding: 25px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- El canvas se agregará automáticamente aquí -->
+
+    <div class="container">
+        <div class="demo-header">
+            <h1>💍 Demo Canvas Effects 💍</h1>
+            <p>Efectos visuales interactivos para tu invitación de boda</p>
+        </div>
+
+        <div class="controls-panel">
+            <h2>🎮 Panel de Control</h2>
+            
+            <div class="control-group">
+                <label>Efectos rápidos:</label>
+                <button class="btn" onclick="weddingCanvas.createConfetti()">
+                    🎉 Lanzar Confetti
+                </button>
+                <button class="btn" onclick="testSparkles()">
+                    ✨ Crear Destellos
+                </button>
+                <button class="btn btn-secondary" onclick="createMassiveConfetti()">
+                    💥 Confetti Masivo
+                </button>
+            </div>
+
+            <div class="control-group">
+                <label>
+                    Partículas flotantes:
+                    <label class="switch">
+                        <input type="checkbox" id="particlesToggle" checked onchange="toggleParticles()">
+                        <span class="slider"></span>
+                    </label>
+                </label>
+            </div>
+
+            <div class="control-group">
+                <label>
+                    Visualizador de audio:
+                    <label class="switch">
+                        <input type="checkbox" id="audioVisualizerToggle" checked onchange="toggleAudioVisualizer()">
+                        <span class="slider"></span>
+                    </label>
+                </label>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h3>✨ Características Canvas</h3>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="particleCount">30</div>
+                    <div class="stat-label">Partículas Activas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="confettiCount">0</div>
+                    <div class="stat-label">Confetti Volando</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="sparkleCount">0</div>
+                    <div class="stat-label">Destellos</div>
+                </div>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="icon">💕</div>
+                    <h4>Partículas Flotantes</h4>
+                    <p>Emojis animados que flotan suavemente por la pantalla</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">🎆</div>
+                    <h4>Confetti Animado</h4>
+                    <p>Explosión de confetti colorido al confirmar asistencia</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">✨</div>
+                    <h4>Efectos de Destello</h4>
+                    <p>Destellos brillantes en botones y acciones importantes</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">🎵</div>
+                    <h4>Visualizador Audio</h4>
+                    <p>Barras que bailan con la música de fondo</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h3>📝 Instrucciones de Integración</h3>
+            <p><strong>Paso 1:</strong> Descarga el archivo <code>canvas-effects.js</code></p>
+            <p><strong>Paso 2:</strong> Agrégalo a tu proyecto en la carpeta <code>js/</code></p>
+            <p><strong>Paso 3:</strong> Incluye el script en tu HTML después de tus otros scripts:</p>
+            <pre style="background: #f5f5f5; padding: 15px; border-radius: 8px; overflow-x: auto;">
+&lt;script src="js/main.js"&gt;&lt;/script&gt;
+&lt;script src="js/form-handler.js"&gt;&lt;/script&gt;
+&lt;script src="js/countdown.js"&gt;&lt;/script&gt;
+&lt;script src="js/mejoras-adicionales.js"&gt;&lt;/script&gt;
+&lt;script src="js/canvas-effects.js"&gt;&lt;/script&gt; <-- NUEVO
+            </pre>
+            <p><strong>Paso 4:</strong> ¡Listo! Los efectos se activarán automáticamente.</p>
+        </div>
+
+        <div class="demo-section">
+            <h3>🎨 Personalización</h3>
+            <p>Puedes personalizar los efectos modificando la configuración en <code>canvas-effects.js</code>:</p>
+            <ul style="margin-left: 20px; margin-top: 15px; line-height: 2;">
+                <li><strong>Cantidad de partículas:</strong> <code>CONFIG.particles.count</code></li>
+                <li><strong>Tipos de emojis:</strong> <code>CONFIG.particles.types</code></li>
+                <li><strong>Colores del confetti:</strong> <code>CONFIG.confetti.colors</code></li>
+                <li><strong>Velocidad de animación:</strong> <code>CONFIG.particles.speed</code></li>
+            </ul>
+        </div>
+
+        <div class="demo-section">
+            <h3>🚀 Funciones Disponibles</h3>
+            <p>Puedes llamar estas funciones desde cualquier parte de tu código:</p>
+            <ul style="margin-left: 20px; margin-top: 15px; line-height: 2;">
+                <li><code>weddingCanvas.createConfetti(count)</code> - Lanza confetti</li>
+                <li><code>weddingCanvas.createSparkles(x, y)</code> - Crea destellos en posición X,Y</li>
+                <li><code>weddingCanvas.toggleParticles(enabled)</code> - Activa/desactiva partículas</li>
+                <li><code>weddingCanvas.toggleAudioVisualizer(enabled)</code> - Activa/desactiva visualizador</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Audio para el demo -->
+    <audio id="weddingMusic" loop>
+        <source src="data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4Ljc2LjEwMAAAAAAAAAAAAAAA" type="audio/mpeg">
+    </audio>
+
+    <!-- Scripts -->
+    <script src="canvas-effects.js"></script>
+    <script>
+        // Funciones auxiliares para la demo
+        function toggleParticles() {
+            const enabled = document.getElementById('particlesToggle').checked;
+            weddingCanvas.toggleParticles(enabled);
+        }
+
+        function toggleAudioVisualizer() {
+            const enabled = document.getElementById('audioVisualizerToggle').checked;
+            weddingCanvas.toggleAudioVisualizer(enabled);
+        }
+
+        function testSparkles() {
+            const x = window.innerWidth / 2;
+            const y = window.innerHeight / 2;
+            weddingCanvas.createSparkles(x, y);
+        }
+
+        function createMassiveConfetti() {
+            weddingCanvas.createConfetti(200);
+        }
+
+        // Actualizar stats cada segundo
+        setInterval(() => {
+            // Estos son valores de ejemplo - en la implementación real
+            // podrías exponer estas estadísticas desde canvas-effects.js
+            const confettiCount = Math.floor(Math.random() * 50);
+            const sparkleCount = Math.floor(Math.random() * 20);
+            
+            document.getElementById('confettiCount').textContent = confettiCount;
+            document.getElementById('sparkleCount').textContent = sparkleCount;
+        }, 1000);
+
+        // Crear confetti aleatorio cada 10 segundos para demostración
+        setInterval(() => {
+            if (Math.random() > 0.5) {
+                weddingCanvas.createConfetti(30);
+            }
+        }, 10000);
+    </script>
+</body>
+</html>
